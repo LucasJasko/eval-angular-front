@@ -1,1 +1,28 @@
-<p>edit-room works!</p>
+<form (ngSubmit)="onEditRoom()" [formGroup]="formulaire">
+  <div>
+    <h2>Nom</h2>
+    <input matInput placeholder="Ex. Pizza" formControlName="name" />
+    <br />
+
+    @if(formulaire.get('name')?.hasError("required")) {
+    <span>Le nom est requis</span>
+    } @else {
+    <span>Le nom ne peut pas avoir plus de 20 caractères</span>
+    }
+  </div>
+  <br />
+  <div>
+    <h2>Description</h2>
+    <textarea
+      type="text"
+      placeholder="Ex. Une super pizza"
+      formControlName="description"
+    ></textarea>
+    <br />
+    <span>La description ne peut pas avoir plus de 50 caractères</span>
+  </div>
+
+  <button [disabled]="!formulaire.valid" type="submit">
+    Modifier le produit
+  </button>
+</form>

@@ -18,7 +18,11 @@ export const routes: Routes = [
     component: CreateRoomComponent,
     canActivate: [modoGuard],
   },
-  { path: 'edit-room', component: EditRoomComponent, canActivate: [modoGuard] },
+  {
+    path: 'edit-room/:id',
+    component: EditRoomComponent,
+    canActivate: [modoGuard],
+  },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: P404Component },
