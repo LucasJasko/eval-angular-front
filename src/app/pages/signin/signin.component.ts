@@ -36,7 +36,7 @@ export class SigninComponent {
               'Vous etes inscrit, vous pouvez vous connecter !',
               'valid'
             );
-            this.router.navigateByUrl('/connection');
+            this.router.navigateByUrl('/login');
           },
           error: (err) => {
             if (err.status === 409) {
