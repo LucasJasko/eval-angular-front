@@ -37,4 +37,12 @@ export class HomeComponent {
           this.notification.show('Le salon a bien été supprimé', 'valid');
         });
   }
+
+  onJoin(room: any) {
+    if (confirm('Voulez vous vraiment rejoindre ce salon ?'))
+      this.http.post('http://localhost:8080/join', {}).subscribe((res) => {
+        this.refresh();
+        this.notification.show('Le salon a bien été supprimé', 'valid');
+      });
+  }
 }

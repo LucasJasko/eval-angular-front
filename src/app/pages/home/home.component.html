@@ -21,7 +21,7 @@
           </p>
         </div>
         <div>
-          <button>Rejoindre</button>
+          <button (click)="onJoin(room)">Rejoindre</button>
           @if(authService.user?.role == "admin" || authService.user?.role ==
           "modo") {
           <button routerLink="/edit-room/{{ room.room_id }}">Modifier</button>
