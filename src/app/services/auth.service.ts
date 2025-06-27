@@ -7,7 +7,7 @@ export class AuthService {
   user: any;
 
   constructor() {
-    const jwt = localStorage.getItem('accessToken');
+    const jwt = localStorage.getItem('token');
     if (jwt != null) this.decodeJwt(jwt);
   }
 
