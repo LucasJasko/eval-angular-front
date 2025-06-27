@@ -1,28 +1,18 @@
 <div class="contact-us-container">
   <div class="contact-us">
     <form (ngSubmit)="onConnection()" [formGroup]="formulaire">
-      <input placeholder="Name" required="" type="text" />
+      <h1>Connection</h1>
 
-      <input
-        name="customerEmail"
-        placeholder="Email"
-        type="email"
-        formControlName="email"
-      />
+      <input placeholder="Email" formControlName="email" />
       @if(formulaire.get('email')?.hasError("required")) {
-      <span>L'email est requis</span>
+      <span class="error">L'email est requis</span>
       } @else {
-      <span>L'email est mal formé</span>
+      <span class="error">L'email est mal formé</span>
       }
 
-      <input
-        name="customerPhone"
-        placeholder="Phone"
-        type="tel"
-        formControlName="password"
-      />
+      <input placeholder="Mot de passe" formControlName="password" />
       @if(formulaire.get('password')?.hasError("required")) {
-      <span>Le mot de passe est requis est requis</span>
+      <span class="error">Le mot de passe est requis est requis</span>
       }
 
       <button [disabled]="!formulaire.valid" type="submit">Se connecter</button>
