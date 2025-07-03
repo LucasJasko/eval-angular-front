@@ -27,16 +27,16 @@ export class EditRoomComponent {
     description: ['', [Validators.maxLength(50)]],
   });
 
-  produitEditer: any;
+  salonEditer: any;
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((parameters) => {
       if (parameters['id']) {
         this.http
           .get('http://localhost:8080/room/' + parameters['id'])
-          .subscribe((produit) => {
-            this.formulaire.patchValue(produit);
-            this.produitEditer = produit;
+          .subscribe((salon) => {
+            this.formulaire.patchValue(salon);
+            this.salonEditer = salon;
           });
       }
     });
@@ -46,7 +46,7 @@ export class EditRoomComponent {
     if (this.formulaire.valid) {
       this.http
         .put(
-          'http://localhost:8080/room/' + this.produitEditer.room_id,
+          'http://localhost:8080/room/' + this.salonEditer.room_id,
           this.formulaire.value
         )
         .subscribe({

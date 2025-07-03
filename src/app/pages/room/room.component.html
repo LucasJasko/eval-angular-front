@@ -1,1 +1,24 @@
-<p>room works!</p>
+<div class="container">
+  <div>
+    @for (room of this.rooms; track $index) {
+    <div>
+      <div>
+        <div>
+          <h2>{{ room.room_name }}</h2>
+          <p>ID: {{ room.room_id }}</p>
+        </div>
+        <div>
+          <p>
+            date: {{ room.room_creation_time | date : "shortDate" }}
+            <br />
+            Value: {{ room.room_desc }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <button (click)="onLeave(room)">Quitter</button>
+      </div>
+    </div>
+    }
+  </div>
+</div>

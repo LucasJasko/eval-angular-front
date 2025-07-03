@@ -40,9 +40,11 @@ export class HomeComponent {
 
   onJoin(room: any) {
     if (confirm('Voulez vous vraiment rejoindre ce salon ?'))
-      this.http.post('http://localhost:8080/join', {}).subscribe((res) => {
-        this.refresh();
-        this.notification.show('Le salon a bien été supprimé', 'valid');
-      });
+      this.http
+        .post('http://localhost:8080/join', { room_id: room.room_id })
+        .subscribe((res) => {
+          this.refresh();
+          this.notification.show('Le salon a bien été rejoint', 'valid');
+        });
   }
 }
