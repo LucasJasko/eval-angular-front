@@ -1,0 +1,8 @@
+@for (message of this.messages; track $index) {
+<div>
+  <p>
+    {{ message.message_author }} :
+    {{ message.message_content }}
+  </p>
+</div>
+}

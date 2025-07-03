@@ -7,12 +7,17 @@ import { P404Component } from './pages/p404/p404.component';
 import { EditRoomComponent } from './pages/edit-room/edit-room.component';
 import { modoGuard } from './services/modo.guard';
 import { SigninComponent } from './pages/signin/signin.component';
+import { SendMessageComponent } from './pages/send-message/send-message.component';
+import { ReadMessagesComponent } from './pages/read-messages/read-messages.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'room', component: RoomComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'send-message/:id', component: SendMessageComponent },
+  { path: 'read-messages/:id', component: ReadMessagesComponent },
+
   {
     path: 'create-room',
     component: CreateRoomComponent,

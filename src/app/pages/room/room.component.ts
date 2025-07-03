@@ -23,7 +23,7 @@ export class RoomComponent {
 
   refresh() {
     this.http
-      .get('http://localhost:8080/user/list/' + this.authService.user.id)
+      .get('http://localhost:8080/user-room/list/' + this.authService.user.id)
       .subscribe((room) => {
         this.rooms = room;
         console.log(this.rooms);

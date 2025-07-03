@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSend()" [formGroup]="formulaire">
+  <div>
+    <h2>Message</h2>
+    <input placeholder="Votre message" formControlName="content" />
+  </div>
+  <br />
+  <button [disabled]="!formulaire.valid" type="submit">Envoyer</button>
+</form>

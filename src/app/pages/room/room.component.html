@@ -16,6 +16,22 @@
         </div>
       </div>
       <div>
+        <button>
+          <a
+            class="nav-link"
+            routerLink="/read-messages/{{ room.room_id }}"
+            routerLinkActive="active"
+            >Lire</a
+          >
+        </button>
+        <button>
+          <a
+            class="nav-link"
+            routerLink="/send-message/{{ room.room_id }}"
+            routerLinkActive="active"
+            >Envoyer un message</a
+          >
+        </button>
         <button (click)="onLeave(room)">Quitter</button>
       </div>
     </div>
