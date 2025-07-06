@@ -1,10 +1,10 @@
 <div class="contact-us-container">
-  <form (ngSubmit)="onSend()" [formGroup]="formulaire" class="contact-us">
+  <form (ngSubmit)="onEdit()" [formGroup]="formulaire" class="contact-us">
     <div>
       <h2>Message</h2>
       <input placeholder="Votre message" formControlName="content" />
     </div>
     <br />
-    <button [disabled]="!formulaire.valid" type="submit">Envoyer</button>
+    <button [disabled]="!formulaire.valid" type="submit">Modifier</button>
   </form>
 </div>

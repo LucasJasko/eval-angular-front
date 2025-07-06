@@ -6,31 +6,30 @@
     </button>
     }
 
-    <div>
+    <ul class="list-container">
       @for (room of this.rooms; track $index) {
-      <div>
+      <li class="list-item">
         <div>
-          <div>
-            <h2>{{ room.room_name }}</h2>
-            <p>ID: {{ room.room_id }}</p>
-          </div>
-          <div>
-            <p>
-              date: {{ room.room_creation_time | date : "shortDate" }}
-              <br />
-              Value: {{ room.room_desc }}
-            </p>
-          </div>
-          <div>
-            <button (click)="onJoin(room)">Rejoindre</button>
-            @if(authService.user?.role == "admin" || authService.user?.role ==
-            "modo") {
-            <button routerLink="/edit-room/{{ room.room_id }}">Modifier</button>
-            <button (click)="onDelete(room)">Supprimer</button>}
-          </div>
+          <h2>{{ room.room_name }}</h2>
+          <p>ID: {{ room.room_id }}</p>
         </div>
-      </div>
+        <div>
+          <p>
+            date: {{ room.room_creation_time | date : "shortDate" }}
+            <br />
+            Value: {{ room.room_desc }}
+          </p>
+        </div>
+        <div class="btn-container">
+          @if(authService.user) {
+          <button (click)="onJoin(room)">Rejoindre</button>
+          } @if(authService.user?.role == "admin" || authService.user?.role ==
+          "modo") {
+          <button routerLink="/edit-room/{{ room.room_id }}">Modifier</button>
+          <button (click)="onDelete(room)">Supprimer</button>}
+        </div>
+      </li>
       }
-    </div>
+    </ul>
   </div>
 </div>

@@ -1,0 +1,51 @@
+.contact-us {
+  height: calc(100vh - 270px);
+  width: calc(100vw - 70px);
+  max-width: calc(100vw - 300px);
+
+  .send-message {
+    margin-left: 0;
+    margin-bottom: 50px;
+    padding: 0;
+
+    a {
+      padding: 20px;
+      margin: 0;
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .messages-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    .message-item {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      .message-item__right {
+        display: flex;
+
+        .btn {
+          padding: 0;
+
+          a,
+          span {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,24 +1,26 @@
-<form (ngSubmit)="onAddRoom()" [formGroup]="formulaire">
-  <div>
-    <h2>Nom</h2>
-    <input placeholder="Ex. Salon 1" formControlName="name" />
-    <br />
+<div class="contact-us-container">
+  <form (ngSubmit)="onAddRoom()" [formGroup]="formulaire" class="contact-us">
+    <div>
+      <h2>Nom</h2>
+      <input placeholder="Ex. Salon 1" formControlName="name" />
+      <br />
 
-    @if(formulaire.get('name')?.hasError("required")) {
-    <span>Le nom est requis</span>
-    } @else {
-    <span>Le nom ne peut pas avoir plus de 20 caractères</span>
-    }
-  </div>
-  <br />
-  <div>
-    <h2>Description</h2>
-    <input placeholder="Ex. Mon salon" formControlName="description" />
+      @if(formulaire.get('name')?.hasError("required")) {
+      <span>Le nom est requis</span>
+      } @else {
+      <span>Le nom ne peut pas avoir plus de 20 caractères</span>
+      }
+    </div>
     <br />
-    <span>La description ne peut pas avoir plus de 50 caractères</span>
-  </div>
+    <div>
+      <h2>Description</h2>
+      <input placeholder="Ex. Mon salon" formControlName="description" />
+      <br />
+      <span>La description ne peut pas avoir plus de 50 caractères</span>
+    </div>
 
-  <button [disabled]="!formulaire.valid" mat-raised-button type="submit">
-    Ajouter le produit
-  </button>
-</form>
+    <button [disabled]="!formulaire.valid" mat-raised-button type="submit">
+      Ajouter le produit
+    </button>
+  </form>
+</div>

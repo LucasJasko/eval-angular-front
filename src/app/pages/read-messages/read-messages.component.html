@@ -1,8 +1,39 @@
-@for (message of this.messages; track $index) {
-<div>
-  <p>
-    {{ message.message_author }} :
-    {{ message.message_content }}
-  </p>
+<div class="contact-us-container">
+  <div class="contact-us">
+    <button class="send-message">
+      <a
+        class="nav-link"
+        routerLink="/send-message/{{ this.id }}"
+        routerLinkActive="active"
+        >Envoyer un message</a
+      >
+    </button>
+    <div class="messages-list">
+      @for (message of this.messages; track $index) {
+      <div class="message-item">
+        <div class="message-item__left">
+          <p>
+            {{ message.message_author }} :
+            {{ message.message_content }}
+          </p>
+        </div>
+        <div class="message-item__right">
+          @if (message.message_author == this.authService.user.pseudo) {
+          <button class="modify-btn btn">
+            <a
+              routerLink="/edit-message/{{ this.id }}/{{ message.message_id }}"
+              routerLinkActive="active"
+            >
+              /
+            </a>
+          </button>
+          <button class="delete-btn btn" (click)="onDelete(message.message_id)">
+            <span> X </span>
+          </button>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
 </div>
-}

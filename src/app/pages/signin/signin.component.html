@@ -10,6 +10,7 @@
       <span class="error">L'email est mal formé</span>
       }
 
+      <input placeholder="Votre pseudo" formControlName="pseudo" />
       <input placeholder="Mot de passe" formControlName="password" />
       @if(formulaire.get('password')?.hasError("required")) {
       <span class="error">Le mot de passe est requis est requis</span>

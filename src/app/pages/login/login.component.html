@@ -1,7 +1,7 @@
 <div class="contact-us-container">
   <div class="contact-us">
     <form (ngSubmit)="onConnection()" [formGroup]="formulaire">
-      <h1>Connection</h1>
+      <h1>Connexion</h1>
 
       <input placeholder="Email" formControlName="email" />
       @if(formulaire.get('email')?.hasError("required")) {

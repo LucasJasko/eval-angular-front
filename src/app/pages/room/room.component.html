@@ -1,8 +1,8 @@
 <div class="container contact-us-container">
   <div class="contact-us">
-    @for (room of this.rooms; track $index) {
-    <div>
-      <div>
+    <ul class="list-container">
+      @for (room of this.rooms; track $index) {
+      <li class="list-item">
         <div>
           <h2>{{ room.room_name }}</h2>
           <p>ID: {{ room.room_id }}</p>
@@ -14,27 +14,27 @@
             Value: {{ room.room_desc }}
           </p>
         </div>
-      </div>
-      <div class="button-container">
-        <button>
-          <a
-            class="nav-link"
-            routerLink="/read-messages/{{ room.room_id }}"
-            routerLinkActive="active"
-            >Lire</a
-          >
-        </button>
-        <button>
-          <a
-            class="nav-link"
-            routerLink="/send-message/{{ room.room_id }}"
-            routerLinkActive="active"
-            >Envoyer un message</a
-          >
-        </button>
-        <button (click)="onLeave(room)">Quitter</button>
-      </div>
-    </div>
-    }
+        <div class="btn-container">
+          <button>
+            <a
+              class="nav-link"
+              routerLink="/read-messages/{{ room.room_id }}"
+              routerLinkActive="active"
+              >Lire</a
+            >
+          </button>
+          <button>
+            <a
+              class="nav-link"
+              routerLink="/send-message/{{ room.room_id }}"
+              routerLinkActive="active"
+              >Envoyer un message</a
+            >
+          </button>
+          <button (click)="onLeave(room)">Quitter</button>
+        </div>
+      </li>
+      }
+    </ul>
   </div>
 </div>

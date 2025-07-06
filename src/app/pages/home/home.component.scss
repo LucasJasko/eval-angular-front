@@ -1,0 +1,25 @@
+.contact-us {
+  height: calc(100vh - 270px);
+  width: calc(100vw - 70px);
+  max-width: 1200px;
+
+  > button {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+
+  .list-container {
+    .list-item {
+      list-style: none;
+
+      .btn-container {
+        display: flex;
+        text-align: left;
+        justify-content: space-around;
+        align-items: start;
+        margin-top: 10px;
+        max-width: fit-content;
+      }
+    }
+  }
+}

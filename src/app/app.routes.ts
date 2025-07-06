@@ -9,15 +9,20 @@ import { modoGuard } from './services/modo.guard';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SendMessageComponent } from './pages/send-message/send-message.component';
 import { ReadMessagesComponent } from './pages/read-messages/read-messages.component';
+import { EditMessageComponent } from './pages/edit-message/edit-message.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'room', component: RoomComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'send-message/:id', component: SendMessageComponent },
   { path: 'read-messages/:id', component: ReadMessagesComponent },
+  {
+    path: 'edit-message/:room_id/:message_id',
+    component: EditMessageComponent,
+  },
 
+  { path: 'room', component: RoomComponent },
   {
     path: 'create-room',
     component: CreateRoomComponent,

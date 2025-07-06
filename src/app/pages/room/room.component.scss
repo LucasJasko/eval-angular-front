@@ -1,0 +1,26 @@
+.contact-us {
+  height: calc(100vh - 270px);
+  width: calc(100vw - 70px);
+  max-width: 1200px;
+
+  .list-container {
+    .list-item {
+      list-style: none;
+      .btn-container {
+        margin-top: 10px;
+        display: flex;
+        max-width: fit-content;
+
+        a {
+          padding: 20px;
+          margin: 0;
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,9 +29,6 @@
         <li class="nav-item">
           <a routerLink="/home" routerLinkActive="active">Accueil</a>
         </li>
-        <li>
-          <a routerLink="/room">Mes salons</a>
-        </li>
         @if (authService.user?.role == "admin" || authService.user?.role ==
         "modo") {
         <li class="nav-item">
@@ -43,6 +40,9 @@
           >
         </li>
         } @if (authService.user) {
+        <li>
+          <a routerLink="/room">Mes salons</a>
+        </li>
         <li class="nav-item">
           <a
             class="nav-link"

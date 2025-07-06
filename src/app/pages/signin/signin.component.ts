@@ -24,6 +24,7 @@ export class SigninComponent {
   formulaire = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.maxLength(50)]],
+    pseudo: ['', [Validators.required, Validators.maxLength(50)]],
   });
 
   onInscription() {
